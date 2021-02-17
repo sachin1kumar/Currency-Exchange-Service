@@ -1,11 +1,14 @@
 package com.currency.service.currencyexchangeservice.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class CurrencyExchange {
 
     @Id
@@ -16,6 +19,10 @@ public class CurrencyExchange {
     private String to;
     private BigDecimal ConversionMultiple;
     private String environment;
+
+    public CurrencyExchange() {
+
+    }
 
     public CurrencyExchange(long id, String from, String to, BigDecimal conversionMultiple) {
         this.id = id;

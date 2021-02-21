@@ -23,7 +23,7 @@ public class CurrencyExchangeController {
             @PathVariable String to
     ) {
         final CurrencyExchange currencyExchange =
-                currencyExchangeRepository.findByFromAndTo(from, to);
+                currencyExchangeRepository.getOne(1001L);
         if (currencyExchange == null) {
             throw new RuntimeException("Unable to find data");
         }

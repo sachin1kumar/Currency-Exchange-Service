@@ -91,8 +91,25 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>sachinkmr375/udemylearning-${project.artifactId}:${project.version}</name>
+					</image>
+					<pullPolicy>IF_NOT_PRESENT</pullPolicy>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+<!--
+	<distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>sachinkmr375</id>
+			<name>sachinkmr375/udemylearning</name>
+			<url>https://hub.docker.com/repository/docker/sachinkmr375/udemylearning</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
+-->
 
 </project>
